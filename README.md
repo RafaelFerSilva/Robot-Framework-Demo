@@ -59,7 +59,8 @@ pip3 install --upgrade robotframework-selenium2library
 echo $'\nInstall FakerLibrary'
 pip3 install robotframework-faker
 ```
-    
+   
+We can save this code in .sh and execute in termial: Ex: ./make_install.sh
 
 &nbsp;
 &nbsp;
