@@ -8,7 +8,11 @@ This project aims to set up a local environment to perform automated tests using
 
 ##  **Install Robot Framework and dependencies**
 
-- Script for install Robot Framework and dependencies
+Clone this repo in your local
+
+Open the terminal at the root of the project and execute: Ex: ./make_install.sh
+
+- make_install.sh is a script for install Robot Framework and dependencies
     1. **Update packages**
     2. **Install ChromeDriver**
     3. **Install dependencies**
@@ -16,51 +20,6 @@ This project aims to set up a local environment to perform automated tests using
     5. **Install Robot Framework**
     6. **Install Selenium2library**
     7. **Install FakerLibrary**
-    
-
-```bash
-#!/usr/bin/env bash
-
-# Versions
-CHROME_DRIVER_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
-
-echo $'This Script is about:
-\n1 - Update packages
-2 - Install ChromeDriver
-3 - Install PIP
-4 - Install dependencies
-5 - Install Robot Framework
-6 - Install Selenium2library
-7 - Install FakerLibrary'
-
-echo $'\nStart Update Packages'
-sudo apt-get -y update
-
-echo $'\nInstall ChromeDriver'
-wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P ~/
-unzip ~/chromedriver_linux64.zip -d ~/
-rm ~/chromedriver_linux64.zip
-sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-sudo chown root:root /usr/local/bin/chromedriver
-sudo chmod 0755 /usr/local/bin/chromedriver
-
-echo $'\nInstall dependencies'
-sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
-
-echo $'\nInstall PIP'
-sudo apt install -y python3-pip
-
-echo $'\nInstall Robot Framework'
-pip3 install robotframework
-
-echo $'\nInstall Selenium2library'
-pip3 install --upgrade robotframework-selenium2library
-
-echo $'\nInstall FakerLibrary'
-pip3 install robotframework-faker
-```
-   
-We can save this code in .sh and execute in termial: Ex: ./make_install.sh
 
 &nbsp;
 &nbsp;
@@ -126,10 +85,7 @@ This demo was create using Ubuntu 18.04.5 LTS and the remote desktop viewer is a
 &nbsp;
 
 ##  Execute Robot Framework Tests
-
-- Clone this repo in github
-- Open the terminal at the root of the project
-- Execute tests
+- Execute tests at the root of the project
 
     ```bash
     robot --variablefile common/config/conf_variables.py --outputdir logs  tests/
