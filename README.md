@@ -16,8 +16,50 @@ This project aims to set up a local environment to perform automated tests using
     5. **Install Robot Framework**
     6. **Install Selenium2library**
     7. **Install FakerLibrary**
+    
 
-    [make_install.sh](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57072db7-bf8b-468e-8c72-62d84027073a/make_install.sh)
+```bash
+#!/usr/bin/env bash
+
+# Versions
+CHROME_DRIVER_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+
+echo $'This Script is about:
+\n1 - Update packages
+2 - Install ChromeDriver
+3 - Install PIP
+4 - Install dependencies
+5 - Install Robot Framework
+6 - Install Selenium2library
+7 - Install FakerLibrary'
+
+echo $'\nStart Update Packages'
+sudo apt-get -y update
+
+echo $'\nInstall ChromeDriver'
+wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P ~/
+unzip ~/chromedriver_linux64.zip -d ~/
+rm ~/chromedriver_linux64.zip
+sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
+sudo chown root:root /usr/local/bin/chromedriver
+sudo chmod 0755 /usr/local/bin/chromedriver
+
+echo $'\nInstall dependencies'
+sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
+
+echo $'\nInstall PIP'
+sudo apt install -y python3-pip
+
+echo $'\nInstall Robot Framework'
+pip3 install robotframework
+
+echo $'\nInstall Selenium2library'
+pip3 install --upgrade robotframework-selenium2library
+
+echo $'\nInstall FakerLibrary'
+pip3 install robotframework-faker
+```
+    
 
 &nbsp;
 &nbsp;
@@ -71,11 +113,7 @@ This demo was create using Ubuntu 18.04.5 LTS and the remote desktop viewer is a
 - **Open remote desktop Viewer**
     - Connect with host = localhost
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3064c93-f06f-40f9-8b9d-a60d2899a550/Screenshot_from_2020-12-10_13-52-26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3064c93-f06f-40f9-8b9d-a60d2899a550/Screenshot_from_2020-12-10_13-52-26.png)
-
     - Authentication using "**secret**" ****password
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4de28e7-bea1-4a2b-8f03-f9f7f9c70b93/Screenshot_from_2020-12-10_13-53-37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4de28e7-bea1-4a2b-8f03-f9f7f9c70b93/Screenshot_from_2020-12-10_13-53-37.png)
         
 &nbsp;
 &nbsp;
