@@ -3,7 +3,7 @@ Documentation    Automation Robot Framework Demo
 
 Library    Selenium2Library
 
-Variables    ../../common/config/conf_variables.py
+Variables    ../../resources/utils/conf_variables.py
 
 *** Test Cases ***
 Open Automation Pratice Site

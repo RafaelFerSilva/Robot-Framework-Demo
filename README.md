@@ -88,5 +88,5 @@ This demo was create using Ubuntu 18.04.5 LTS and the remote desktop viewer is a
 - Execute tests at the root of the project
 
     ```bash
-    robot --variablefile common/config/conf_variables.py --outputdir logs  tests/
+     robot --outputdir results  tests/
     ```
