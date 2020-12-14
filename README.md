@@ -36,6 +36,16 @@ Open the terminal at the root of the project and execute: Ex: ./make_install.sh
 
 - **Install Docker**
     - [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+  
+Create the docker group.
+```bash
+$ sudo groupadd docker
+```
+
+Add your user to the docker group.
+```bash
+$ sudo usermod -aG docker $USER
+```
 
 **We have two selenium/standalone images**
 
